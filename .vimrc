@@ -52,3 +52,11 @@ endif
 set laststatus=2
 set noshowmode
 filetype plugin indent on
+
+" markdown settings
+let g:vim_markdown_folding_disabled=1 
+
+" color scheme
+colorscheme slate
+
+set guifont=Monospace\ 12
