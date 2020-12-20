@@ -7,16 +7,15 @@
 Install required packages:
 
 ```bash
-sudo apt install libudev-dev libyaml-cpp-dev libevdev-dev cmake
+sudo apt install libudev-dev libyaml-cpp-dev libevdev-dev cmake build-essential
 ```
 
 Clone and install programs:
 
 ```bash
 cd # go home
-mkdir modern-space-cadet # create a folder to keep everything
-mkdir src # create a folder to keep source files and repos
-cd src
+mkdir -p .modern-space-cadet/src # create a folder to keep everything
+cd .modern-space-cadet/src # a folder to keep source files and repos
 git clone https://gitlab.com/interception/linux/tools
 git clone https://gitlab.com/interception/linux/plugins/dual-function-keys
 cd tools
@@ -40,7 +39,7 @@ make && sudo make install
 Create `udevmon.yaml` file:
 
 ```bash
-sudo nano /etc/udevmon.yaml
+sudo vim /etc/udevmon.yaml
 ```
 
 Paste below and save:
@@ -55,7 +54,7 @@ Paste below and save:
 Create a systemd service to make it persistant:
 
 ```bash
-sudo nano /etc/systemd/system/udevmon.service
+sudo vim /etc/systemd/system/udevmon.service
 ```
 
 Paste below and save:
@@ -76,7 +75,7 @@ WantedBy=multi-user.target
 Create a config file for `dual-function-keys`:
 
 ```bash
-nano ~/.dual-function-keys.yaml
+vim ~/.dual-function-keys.yaml
 ```
 
 Paste below and save:
