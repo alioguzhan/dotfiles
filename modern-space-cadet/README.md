@@ -7,7 +7,10 @@
 Install required packages:
 
 ```bash
-sudo apt install libudev-dev libyaml-cpp-dev libevdev-dev cmake build-essential
+sudo apt install libboost-system-dev \
+      libboost-thread-dev libboost-program-options-dev \
+      libboost-test-dev libudev-dev libyaml-cpp-dev \
+      libevdev-dev cmake build-essential
 ```
 
 Clone and install programs:
@@ -45,7 +48,7 @@ sudo vim /etc/udevmon.yaml
 Paste below and save:
 
 ```yaml
-- JOB: "intercept -g $DEVNODE | dual-function-keys -c /home/ali/.dual-function-keys.yaml | uinput -d $DEVNODE"
+- JOB: "intercept -g $DEVNODE | dual-function-keys -c /home/ali/.modern-space-cadet/dual-function-keys.yaml | uinput -d $DEVNODE"
   DEVICE:
     EVENTS:
       EV_KEY: [KEY_LEFTSHIFT, KEY_RIGHTSHIFT, KEY_CAPSLOCK]
@@ -75,7 +78,7 @@ WantedBy=multi-user.target
 Create a config file for `dual-function-keys`:
 
 ```bash
-vim ~/.dual-function-keys.yaml
+vim ~/.modern-space-cadet/dual-function-keys.yaml
 ```
 
 Paste below and save:
@@ -94,7 +97,7 @@ MAPPINGS:
     TAP: [KEY_RIGHTSHIFT, KEY_0]
     HOLD: KEY_RIGHTSHIFT
   - KEY: KEY_CAPSLOCK
-    TAP: KEY_LEFTCTRL
+    TAP: KEY_ESC
     HOLD: KEY_LEFTCTRL
 ```
 
