@@ -1,11 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# https://github.com/facebook/create-react-app/issues/7251
+export PATH=$PATH:/mnt/c/Windows/System32
+
+#Path to your oh-my-zsh installation.
 export ZSH="/home/ali/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+
+# custom completions
+fpath+=~/.zfunc
+compinit
 
 plugins=(git node nvm)
 
@@ -31,3 +38,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # mimic MacOS
 alias open='xdg-open &>/dev/null'
+
+# fnm
+export PATH=/home/ali/.fnm:$PATH
+eval "`fnm env`"
