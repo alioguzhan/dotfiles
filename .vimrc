@@ -14,7 +14,12 @@ Plug 'godlygeek/tabular'
 
 Plug 'plasticboy/vim-markdown'
 
+Plug 'leafgarland/typescript-vim'
+
+Plug 'peitalin/vim-jsx-typescript'
+
 call plug#end()
+
 " enable syntax highlighting
 syntax on
 
