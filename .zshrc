@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # https://github.com/facebook/create-react-app/issues/7251
-export PATH=$PATH:/mnt/c/Windows/System32
+# export PATH=$PATH:/mnt/c/Windows/System32
 
 #Path to your oh-my-zsh installation.
 export ZSH="/home/ali/.oh-my-zsh"
@@ -41,4 +41,4 @@ alias open='xdg-open &>/dev/null'
 
 # fnm
 export PATH=/home/ali/.fnm:$PATH
-eval "`fnm env`"
+eval "$(fnm env)"
