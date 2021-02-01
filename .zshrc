@@ -42,3 +42,5 @@ alias open='xdg-open &>/dev/null'
 # fnm
 export PATH=/home/ali/.fnm:$PATH
 eval "$(fnm env)"
+
+[ -f "/home/ali/.ghcup/env" ] && source "/home/ali/.ghcup/env" # ghcup-env
