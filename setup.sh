@@ -3,8 +3,7 @@
 set -eu -o pipefail # fail on error , debug all lines
 
 sudo -n true
-test $? -eq 0 || exit 1 "you should have sudo priveledge to run this script"
-
+test $? -eq 0 || exit 1
 
 echo "initial setup..."
 sudo apt-get install -y libboost-system-dev \
@@ -19,8 +18,8 @@ echo "Linking dotfiles to the home folder...."
 ln -fs $PWD/.zshrc $HOME/.zshrc
 ln -fs $PWD/.vimrc $HOME/.vimrc
 ln -fs $PWD/.gitconfig $HOME/.gitconfig
+ln -fs $PWD/.tmux.conf $HOME/.tmux.conf
 echo "Done."
-
 
 echo "Preparing modern-space-cadet..."
 mkdir -p $HOME/.modern-space-cadet
