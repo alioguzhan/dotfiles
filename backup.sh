@@ -13,7 +13,7 @@ echo "-----------------------------------"
 readonly _RSYNC="/usr/bin/sudo /usr/bin/rsync"
 readonly _TODAY=$(date +"%d-%m-%Y")
 readonly _YESTERDAY=$(date -d "1 day ago" +"%d-%m-%Y")
-readonly _OLDEST_BACKUP=$(date -d "7 days ago" +"%d-%m-%Y")
+readonly _OLDEST_BACKUP=$(date -d "15 days ago" +"%d-%m-%Y")
 _NOW=$(date +"%d-%m-%Y %H:%M:%S")
 
 readonly _BACKUP_DIR="/media/ali/Backup/Mime_Tachine"
@@ -21,9 +21,13 @@ readonly _EXCLUDES="backup.excludes"
 readonly _LOGFILE="$_BACKUP_DIR/BACKUP_success.log"
 
 readonly _DESTINATION="${_BACKUP_DIR}/${_TODAY}"
+readonly _LATEST=${_BACKUP_DIR}/latest
+
+mkdir -p ${_BACKUP_DIR}/"${_YESTERDAY}"
 
 rsync -avxp \
     --progress \
+    --delete \
     --rsync-path="$_RSYNC" \
     --exclude-from=$_EXCLUDES \
     --numeric-ids \
@@ -33,6 +37,8 @@ rsync -avxp \
     "$HOME"/Downloads "$HOME"/Documents "$HOME"/Pictures \
     "$HOME"/Videos "$HOME"/Music "$HOME"/projects \
     "$_DESTINATION" | grep failed
+
+ln -s "$_DESTINATION" $_LATEST
 
 rm -rf "${_BACKUP_DIR:?}/${_OLDEST_BACKUP}"
 
