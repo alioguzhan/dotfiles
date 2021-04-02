@@ -13,7 +13,7 @@ echo "-----------------------------------"
 readonly _RSYNC="/usr/bin/sudo /usr/bin/rsync"
 readonly _TODAY=$(date +"%d-%m-%Y")
 readonly _YESTERDAY=$(date -d "1 day ago" +"%d-%m-%Y")
-readonly _OLDEST_BACKUP=$(date -d "3 days ago" +"%d-%m-%Y")
+readonly _OLDEST_BACKUP=$(date -d "7 days ago" +"%d-%m-%Y")
 _NOW=$(date +"%d-%m-%Y %H:%M:%S")
 
 readonly _BACKUP_DIR="/media/ali/Backup/Mime_Tachine"
