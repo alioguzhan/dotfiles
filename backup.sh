@@ -32,7 +32,7 @@ rsync -avxp \
     -a \
     "$HOME"/Downloads "$HOME"/Documents "$HOME"/Pictures \
     "$HOME"/Videos "$HOME"/Music "$HOME"/projects \
-    "$_DESTINATION"
+    "$_DESTINATION" | grep failed
 
 rm -rf "${_BACKUP_DIR:?}/${_OLDEST_BACKUP}"
 

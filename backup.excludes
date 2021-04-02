@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,react,macos,visualstudiocode,linux,python,haskell
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,react,macos,visualstudiocode,linux,python,haskell
+# Created by https://www.toptal.com/developers/gitignore/api/node,react,macos,linux,python,haskell
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,react,macos,linux,python,haskell
 
 ### Haskell ###
 dist
@@ -352,15 +352,5 @@ psd
 thumb
 sketch
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
-*.code-workspace
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
-
-# End of https://www.toptal.com/developers/gitignore/api/node,react,macos,visualstudiocode,linux,python,haskell
+# End of https://www.toptal.com/developers/gitignore/api/node,react,macos,linux,python,haskell
+pgdata
