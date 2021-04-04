@@ -6,12 +6,13 @@
 
 set -e
 
+readonly _TODAY=$(date +"%d-%m-%Y")
+
 echo "Mime Tachine 2021"
 echo "Starting daily backup ${_TODAY}"
 echo "-----------------------------------"
 
 readonly _RSYNC="/usr/bin/sudo /usr/bin/rsync"
-readonly _TODAY=$(date +"%d-%m-%Y")
 readonly _YESTERDAY=$(date -d "1 day ago" +"%d-%m-%Y")
 readonly _OLDEST_BACKUP=$(date -d "15 days ago" +"%d-%m-%Y")
 _NOW=$(date +"%d-%m-%Y %H:%M:%S")
@@ -36,10 +37,11 @@ rsync -avxp \
     -a \
     "$HOME"/Downloads "$HOME"/Documents "$HOME"/Pictures \
     "$HOME"/Videos "$HOME"/Music "$HOME"/projects \
-    "$_DESTINATION" | grep failed
+    "$_DESTINATION"
 
-ln -s "$_DESTINATION" $_LATEST
+rm -rf $_LATEST
+ln -fs "$_DESTINATION" $_LATEST
 
 rm -rf "${_BACKUP_DIR:?}/${_OLDEST_BACKUP}"
 
-echo "BACKUP: success ${_NOW} " >>$_LOGFILE
+echo "BACKUP: success ${_NOW}" >>$_LOGFILE
