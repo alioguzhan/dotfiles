@@ -20,6 +20,11 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install yarn
 ```
 
-## nvm
+## fnm
 
-Install nvm from [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvmi)
+Install fnm from [https://github.com/Schniz/fnm](https://github.com/Schniz/fnm).
+
+
+## env variables
+
+create a `.env_secret` file under `~/`. The content of that file will be loaded by zsh.

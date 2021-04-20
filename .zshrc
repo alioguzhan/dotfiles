@@ -51,3 +51,13 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias emacs="emacs -nw"
+
+export REACT_APP_EDITOR=code
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+# this is for my secret env variables. do not keep those in this file
+# since this is on Github
+source ~/.env_secret
