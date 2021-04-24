@@ -6,15 +6,20 @@
 
 set -e
 
-readonly _TODAY=$(date +"%d-%m-%Y")
+readonly _TODAY
+readonly _YESTERDAY
+readonly _OLDEST_BACKUP
+
+_TODAY=$(date +"%d-%m-%Y")
 
 echo "Mime Tachine 2021"
 echo "Starting daily backup ${_TODAY}"
 echo "-----------------------------------"
 
 readonly _RSYNC="/usr/bin/sudo /usr/bin/rsync"
-readonly _YESTERDAY=$(date -d "1 day ago" +"%d-%m-%Y")
-readonly _OLDEST_BACKUP=$(date -d "15 days ago" +"%d-%m-%Y")
+
+_YESTERDAY=$(date -d "1 day ago" +"%d-%m-%Y")
+_OLDEST_BACKUP=$(date -d "15 days ago" +"%d-%m-%Y")
 _NOW=$(date +"%d-%m-%Y %H:%M:%S")
 
 readonly _BACKUP_DIR="/media/ali/Backup/Mime_Tachine"

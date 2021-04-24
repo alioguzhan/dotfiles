@@ -7,7 +7,7 @@ test $? -eq 0 || exit 1
 
 echo "initial setup..."
 sudo apt-get install -y \
-      git curl neofetch \ 
+      git curl neofetch \
       htop zsh libboost-system-dev \
       libboost-thread-dev libboost-program-options-dev \
       libboost-test-dev libudev-dev libyaml-cpp-dev \
@@ -29,9 +29,9 @@ mkdir -p "$HOME/.modern-space-cadet"
 
 _first=$PWD
 
-cd $HOME # go home
+cd "$HOME"                               # go home
 mkdir -p "$HOME/.modern-space-cadet/src" # create a folder to keep everything
-cd .modern-space-cadet/src # a folder to keep source files and repos
+cd .modern-space-cadet/src               # a folder to keep source files and repos
 rm -rf tools
 git clone https://gitlab.com/interception/linux/tools
 rm -rf dual-function-keys
@@ -47,7 +47,7 @@ cd ../../
 cd dual-function-keys
 make && sudo make install
 
-cd $_first # go back to dotfiles folder
+cd "$_first" # go back to dotfiles folder
 
 ln -fs "$PWD/modern-space-cadet/dual-function-keys.yaml" "$HOME/.modern-space-cadet/dual-function-keys.yaml"
 sudo ln -fs "$PWD/modern-space-cadet/udevmon.yaml" /etc/udevmon.yaml
