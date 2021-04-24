@@ -6,13 +6,28 @@ sudo -n true
 test $? -eq 0 || exit 1
 
 echo "initial setup..."
-sudo apt-get install -y \
-      git curl neofetch \
-      htop zsh libboost-system-dev \
-      libboost-thread-dev libboost-program-options-dev \
-      libboost-test-dev libudev-dev libyaml-cpp-dev \
-      libevdev-dev cmake build-essential vim neofetch \
-      wmctrl xdotool libinput-tools
+
+_DISTRO=$( (lsb_release -is || cat /etc/*release || uname -om) 2>/dev/null | head -n1 | awk '{print $1;}')
+
+if [ "$_DISTRO" = "Fedora" ]; then
+      echo "Distro is Fedora. Installing pacakges..."
+      sudo dnf install -y git curl neofetch vim \
+            @development-tools htop zsh cmake gcc-c++ \
+            wmctrl xdotool libevdev-devel systemd-devel \
+            yaml-cpp-devel boost-devel
+elif [ "$_DISTRO" = "Ubuntu" ] || which apt-get || which apt || which dpkg; then
+      echo "Distro is Debian based. Installing pacakges..."
+      sudo apt-get install -y \
+            git curl neofetch vim \
+            htop zsh libboost-system-dev \
+            libboost-thread-dev libboost-program-options-dev \
+            libboost-test-dev libudev-dev libyaml-cpp-dev \
+            libevdev-dev cmake build-essential \
+            wmctrl xdotool libinput-tools
+else
+      echo "I couldn't tell the distro. Exiting..."
+      exit 1
+fi
 
 mkdir -p "$HOME/.zfunc"
 
