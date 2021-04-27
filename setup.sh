@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -eu -o pipefail # fail on error , debug all lines
+set -x
 
 sudo -n true
 test $? -eq 0 || exit 1
@@ -9,12 +10,16 @@ echo "initial setup..."
 
 _DISTRO=$( (lsb_release -is || cat /etc/*release || uname -om) 2>/dev/null | head -n1 | awk '{print $1;}')
 
+echo $_DISTRO
+
 if [ "$_DISTRO" = "Fedora" ]; then
       echo "Distro is Fedora. Installing pacakges..."
       sudo dnf install -y git curl neofetch vim \
             @development-tools htop zsh cmake gcc-c++ \
             wmctrl xdotool libevdev-devel systemd-devel \
-            yaml-cpp-devel boost-devel
+            yaml-cpp-devel boost-devel util-linux-user
+      echo "Disable Selinux temporarily..."
+      sudo setenforce 0
 elif [ "$_DISTRO" = "Ubuntu" ] || which apt-get || which apt || which dpkg; then
       echo "Distro is Debian based. Installing pacakges..."
       sudo apt-get install -y \
@@ -68,7 +73,13 @@ ln -fs "$PWD/modern-space-cadet/dual-function-keys.yaml" "$HOME/.modern-space-ca
 sudo ln -fs "$PWD/modern-space-cadet/udevmon.yaml" /etc/udevmon.yaml
 sudo ln -fs "$PWD/modern-space-cadet/udevmon.service" /etc/systemd/system/udevmon.service
 
+sudo systemctl daemon-reexec
 sudo systemctl enable --now udevmon
 sudo systemctl start udevmon
 sudo systemctl status udevmon
+
+if [ "$_DISTRO" = "Fedora" ]; then
+  sudo setenforce 1
+fi
+
 echo "Done."

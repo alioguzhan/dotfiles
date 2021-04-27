@@ -24,6 +24,12 @@ sudo apt-get update && sudo apt-get install yarn
 
 Install fnm from [https://github.com/Schniz/fnm](https://github.com/Schniz/fnm).
 
+## vim-plug
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 ## env variables
 
