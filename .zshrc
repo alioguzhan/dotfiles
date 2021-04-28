@@ -54,7 +54,7 @@ alias emacs="emacs -nw"
 
 export REACT_APP_EDITOR=code
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then # for Tilix Terminal
   source /etc/profile.d/vte.sh
 fi
 

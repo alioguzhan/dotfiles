@@ -1,8 +1,12 @@
 # dotfiles
-Every config and command and program for a fresh linux installation
 
+Minimum viable configuration and setup for my Linux setups.
 
-## node and yarn
+## Initial Setup
+
+Run `./setup.sh` first.
+
+## Node and Yarn
 
 Install LTS node:
 
@@ -20,9 +24,27 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install yarn
 ```
 
+Or:
+
+```
+npm install --global yarn
+```
+
 ## fnm
 
 Install fnm from [https://github.com/Schniz/fnm](https://github.com/Schniz/fnm).
+
+For zsh completions:
+
+```
+fnm completions --shell zsh > ~/.zfunc/_fnm
+```
+
+Install LTS:
+
+```
+fnm install --lts
+```
 
 ## vim-plug
 
@@ -33,4 +55,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ## env variables
 
-create a `.env_secret` file under `~/`. The content of that file will be loaded by zsh.
+create `.env_secret` file under `~/`. The content of that file will be loaded by zsh. (This should be created already with `./setup.sh` script)

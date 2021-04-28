@@ -10,8 +10,6 @@ echo "initial setup..."
 
 _DISTRO=$( (lsb_release -is || cat /etc/*release || uname -om) 2>/dev/null | head -n1 | awk '{print $1;}')
 
-echo $_DISTRO
-
 if [ "$_DISTRO" = "Fedora" ]; then
       echo "Distro is Fedora. Installing pacakges..."
       sudo dnf install -y git curl neofetch vim \
@@ -21,7 +19,7 @@ if [ "$_DISTRO" = "Fedora" ]; then
       echo "Disable Selinux temporarily..."
       sudo setenforce 0
 elif [ "$_DISTRO" = "Ubuntu" ] || which apt-get || which apt || which dpkg; then
-      echo "Distro is Debian based. Installing pacakges..."
+      echo "Distro is Debian based. Installing packages..."
       sudo apt-get install -y \
             git curl neofetch vim \
             htop zsh libboost-system-dev \
@@ -41,6 +39,7 @@ ln -fs "$PWD/.zshrc" "$HOME/.zshrc"
 ln -fs "$PWD/.vimrc" "$HOME/.vimrc"
 ln -fs "$PWD/.gitconfig" "$HOME/.gitconfig"
 ln -fs "$PWD/.tmux.conf" "$HOME/.tmux.conf"
+touch "$HOME/.env_secret" # This is where I keep my secret env variables.
 echo "Done."
 
 echo "Preparing modern-space-cadet..."
