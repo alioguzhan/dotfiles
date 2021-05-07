@@ -2,7 +2,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,react,macos,linux,python,haskell
 
 ### Haskell ###
-dist
 dist-*
 cabal-dev
 *.o
@@ -145,7 +144,6 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 .env*.local
 
@@ -164,8 +162,6 @@ typings/
 .storybook-out
 storybook-static
 
-# rollup.js default build output
-dist/
 
 # Gatsby files
 .cache/
@@ -300,7 +296,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-# .env
 .env/
 .venv/
 env/
@@ -354,3 +349,11 @@ sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,macos,linux,python,haskell
 pgdata
+
+
+*.deb
+*.iso
+steam/
+Dropbox/
+.dropbox/
+.albiononline

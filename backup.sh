@@ -6,23 +6,24 @@
 
 set -e
 
-readonly _TODAY
-readonly _YESTERDAY
-readonly _OLDEST_BACKUP
-
 _TODAY=$(date +"%d-%m-%Y")
 
 echo "Mime Tachine 2021"
 echo "Starting daily backup ${_TODAY}"
 echo "-----------------------------------"
 
-readonly _RSYNC="/usr/bin/sudo /usr/bin/rsync"
-
+_RSYNC="/usr/bin/sudo /usr/bin/rsync"
 _YESTERDAY=$(date -d "1 day ago" +"%d-%m-%Y")
 _OLDEST_BACKUP=$(date -d "15 days ago" +"%d-%m-%Y")
 _NOW=$(date +"%d-%m-%Y %H:%M:%S")
 
-readonly _BACKUP_DIR="/media/ali/Backup/Mime_Tachine"
+readonly _YESTERDAY
+readonly _OLDEST_BACKUP
+readonly _NOW
+readonly _RSYNC
+readonly _TODAY
+
+readonly _BACKUP_DIR="/media/ali/MIME_TACHINE"
 readonly _EXCLUDES="backup.excludes"
 readonly _LOGFILE="$_BACKUP_DIR/BACKUP_success.log"
 
@@ -40,9 +41,7 @@ rsync -avxp \
     --delete -r \
     --link-dest=../"$_YESTERDAY" \
     -a \
-    "$HOME"/Downloads "$HOME"/Documents "$HOME"/Pictures \
-    "$HOME"/Videos "$HOME"/Music "$HOME"/projects \
-    "$_DESTINATION"
+    "$HOME" "$_DESTINATION"
 
 rm -rf $_LATEST
 ln -fs "$_DESTINATION" $_LATEST
