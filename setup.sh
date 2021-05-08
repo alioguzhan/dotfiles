@@ -29,7 +29,8 @@ elif [ "$_DISTRO" = "Ubuntu" ] || which apt-get || which apt || which dpkg; then
             libevdev-dev cmake build-essential \
             wmctrl xdotool libinput-tools playerctl \
             compton hsetroot rxvt-unicode xsel rofi fonts-noto \
-            fonts-mplus xsettingsd lxappearance scrot viewnior
+            fonts-mplus xsettingsd lxappearance scrot viewnior \
+            xclip maim
       pip3 install spotify-cli-linux
 else
       echo "I couldn't tell the distro. Exiting..."
@@ -45,8 +46,11 @@ ln -fs "$PWD/.vimrc" "$HOME/.vimrc"
 ln -fs "$PWD/.gitconfig" "$HOME/.gitconfig"
 ln -fs "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 # i3
-ln -fs "$PWD/i3-setup/i3" "$HOME/.config/i3"
-ln -fs "$PWD/i3-setup/i3status" "$HOME/.config/i3status"
+mv "$HOME"/.config/i3 "$HOME"/.config/i3.old 2>/dev/null || true
+mv "$HOME"/.config/i3status "$HOME"/.config/i3status.old 2>/dev/null || true
+
+ln -fs "$PWD/i3-setup/i3" "$HOME/.config"
+ln -fs "$PWD/i3-setup/i3status" "$HOME/.config"
 ln -fs "$PWD/i3-setup/.dunstrc" "$HOME/.config/dunst/dunstrc"
 ln -fs "$PWD/i3-setup/.Xresources" "$HOME/"
 ln -fs "$PWD/i3-setup/.xsettingsd" "$HOME/"

@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $super Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -30,6 +31,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+#autostart
+exec --no-startup-id feh --bg-fill ~/Pictures/wp/wallpaper_original.png
+exec --no-startup-id xsettingsd &
+exec --no-startup-id compton -b
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -41,7 +47,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -99,6 +105,22 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# change container layout split
+bindsym $super+s layout toggle split
+
+# Screenshots
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date +'%d-%m-%Y_%H:%M:%S').png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "$HOME/Pictures/$(date +'%d-%m-%Y_%H:%M:%S').png"
+bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date +'%d-%m-%Y_%H:%M:%S').png"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -187,8 +209,7 @@ bar {
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspace        #2f343f #ebcb8b #2f343f
     }
-        # status_command i3status
-        status_command exec /home/ali/.config/i3status/net-speed.sh
+        status_command i3status
 }
 
 # colour of border, background, text, indicator, and child_border
