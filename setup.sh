@@ -15,18 +15,22 @@ if [ "$_DISTRO" = "Fedora" ]; then
       sudo dnf install -y git curl neofetch vim \
             @development-tools htop zsh cmake gcc-c++ \
             wmctrl xdotool libevdev-devel systemd-devel \
-            yaml-cpp-devel boost-devel util-linux-user
+            yaml-cpp-devel boost-devel util-linux-user playerctl
       echo "Disable Selinux temporarily..."
       sudo setenforce 0
+      pip3 install spotify-cli-linux
 elif [ "$_DISTRO" = "Ubuntu" ] || which apt-get || which apt || which dpkg; then
       echo "Distro is Debian based. Installing packages..."
       sudo apt-get install -y \
-            git curl neofetch vim \
+            git curl neofetch vim i3 \
             htop zsh libboost-system-dev \
             libboost-thread-dev libboost-program-options-dev \
             libboost-test-dev libudev-dev libyaml-cpp-dev \
             libevdev-dev cmake build-essential \
-            wmctrl xdotool libinput-tools
+            wmctrl xdotool libinput-tools playerctl \
+            compton hsetroot rxvt-unicode xsel rofi fonts-noto \
+            fonts-mplus xsettingsd lxappearance scrot viewnior
+      pip3 install spotify-cli-linux
 else
       echo "I couldn't tell the distro. Exiting..."
       exit 1
@@ -35,10 +39,19 @@ fi
 mkdir -p "$HOME/.zfunc"
 
 echo "Linking dotfiles to the home folder...."
+
 ln -fs "$PWD/.zshrc" "$HOME/.zshrc"
 ln -fs "$PWD/.vimrc" "$HOME/.vimrc"
 ln -fs "$PWD/.gitconfig" "$HOME/.gitconfig"
 ln -fs "$PWD/.tmux.conf" "$HOME/.tmux.conf"
+# i3
+ln -fs "$PWD/i3-setup/i3" "$HOME/.config/i3"
+ln -fs "$PWD/i3-setup/i3status" "$HOME/.config/i3status"
+ln -fs "$PWD/i3-setup/.dunstrc" "$HOME/.config/dunst/dunstrc"
+ln -fs "$PWD/i3-setup/.Xresources" "$HOME/"
+ln -fs "$PWD/i3-setup/.xsettingsd" "$HOME/"
+ln -fs "$PWD/i3-setup/compton.conf" "$HOME/.config/"
+
 touch "$HOME/.env_secret" # This is where I keep my secret env variables.
 echo "Done."
 
@@ -78,7 +91,7 @@ sudo systemctl start udevmon
 sudo systemctl status udevmon
 
 if [ "$_DISTRO" = "Fedora" ]; then
-  sudo setenforce 1
+      sudo setenforce 1
 fi
 
 echo "Done."
