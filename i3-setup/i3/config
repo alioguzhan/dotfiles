@@ -38,7 +38,7 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 
 # get weather data on start
-exec --no-startup-id curl -f0 'https://wttr.in?format=2' > ~/.logs/weather.log
+exec --no-startup-id sh ~/.config/i3status/weather.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

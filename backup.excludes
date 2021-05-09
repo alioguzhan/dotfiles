@@ -354,6 +354,10 @@ pgdata
 *.deb
 *.iso
 steam/
+Steam
 Dropbox/
 .dropbox/
-.albiononline
+.local/
+.config/
+.android
+Android
