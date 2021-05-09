@@ -16,6 +16,9 @@ set $super Mod4
 # is used in the bar {} block below.
 font pango: M+ 1m, Noto Sans, FontAwesome 10
 
+# bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $super+space exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -33,6 +36,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Pictures/wp/wallpaper_original.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
+
+# get weather data on start
+exec --no-startup-id curl -f0 'https://wttr.in?format=2' > ~/.logs/weather.log
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

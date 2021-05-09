@@ -17,6 +17,7 @@ order += "disk /"
 order += "ethernet eno2"
 # order += "wireless wlo1"
 order += "volume master"
+order += "read_file weather"
 order += "tztime local"
 
 load {
@@ -67,5 +68,10 @@ tztime local {
 
 read_file spotify {
         format = "<span background='#1dd05d'> &#xf001; %content </span>"
-        path = "/home/ali/.config/i3status/spotify.log"
+        path = "/home/ali/.logs/spotify.log"
+}
+
+read_file weather {
+        format = "<span background='#88c0d0'> %content </span>"
+        path = "/home/ali/.logs/weather.log"
 }

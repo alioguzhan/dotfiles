@@ -46,6 +46,7 @@ ln -fs "$PWD/.vimrc" "$HOME/.vimrc"
 ln -fs "$PWD/.gitconfig" "$HOME/.gitconfig"
 ln -fs "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 # i3
+mkdir "$HOME/.logs"
 mv "$HOME"/.config/i3 "$HOME"/.config/i3.old 2>/dev/null || true
 mv "$HOME"/.config/i3status "$HOME"/.config/i3status.old 2>/dev/null || true
 
