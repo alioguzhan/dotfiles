@@ -20,26 +20,26 @@ order += "volume master"
 order += "tztime local"
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#f59335'> &#xf21e; %5min Load </span>"
 }
 
 cpu_usage {
-        format = "<span background='#b48ead'>  %usage </span>"
+        format = "<span background='#b48ead'> &#xf2db; %usage </span>"
 }
 
 memory {
-        format = "<span background='#d3d3d3'> %used / %total </span>"
+        format = "<span background='#d3d3d3'> &#xf1c0; %used / %total </span>"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 cpu_temperature 2 {
-        format = "<span background='#bf616a'>  %degrees °C </span>"
+        format = "<span background='#bf616a'> &#xf2c9; %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone2/temp"
 }
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free (%percentage_used) </span>"
+        format = "<span background='#fec7cd'> &#xf0a0; %free Free (%percentage_used) </span>"
 }
 
 ethernet eno2 {
@@ -66,6 +66,6 @@ tztime local {
 }
 
 read_file spotify {
-        format = "<span background='#1dd05d'> ♪ %content </span>"
+        format = "<span background='#1dd05d'> &#xf001; %content </span>"
         path = "/home/ali/.config/i3status/spotify.log"
 }

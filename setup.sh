@@ -29,8 +29,8 @@ elif [ "$_DISTRO" = "Ubuntu" ] || which apt-get || which apt || which dpkg; then
             libevdev-dev cmake build-essential \
             wmctrl xdotool libinput-tools playerctl \
             compton hsetroot rxvt-unicode xsel rofi fonts-noto \
-            fonts-mplus xsettingsd lxappearance scrot viewnior \
-            xclip maim
+            fonts-mplus fonts-font-awesome xsettingsd lxappearance \
+            scrot viewnior xclip maim
       pip3 install spotify-cli-linux
 else
       echo "I couldn't tell the distro. Exiting..."
@@ -51,7 +51,7 @@ mv "$HOME"/.config/i3status "$HOME"/.config/i3status.old 2>/dev/null || true
 
 ln -fs "$PWD/i3-setup/i3" "$HOME/.config"
 ln -fs "$PWD/i3-setup/i3status" "$HOME/.config"
-ln -fs "$PWD/i3-setup/.dunstrc" "$HOME/.config/dunst/dunstrc"
+ln -fs "$PWD/i3-setup/dunstrc" "$HOME/.config/dunst/"
 ln -fs "$PWD/i3-setup/.Xresources" "$HOME/"
 ln -fs "$PWD/i3-setup/.xsettingsd" "$HOME/"
 ln -fs "$PWD/i3-setup/compton.conf" "$HOME/.config/"
@@ -92,10 +92,11 @@ sudo ln -fs "$PWD/modern-space-cadet/udevmon.service" /etc/systemd/system/udevmo
 sudo systemctl daemon-reexec
 sudo systemctl enable --now udevmon
 sudo systemctl start udevmon
-sudo systemctl status udevmon
 
 if [ "$_DISTRO" = "Fedora" ]; then
       sudo setenforce 1
 fi
+
+fc-cache -fv
 
 echo "Done."

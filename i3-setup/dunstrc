@@ -57,4 +57,4 @@ timeout = 0
 [spotify]
 appname = Spotify
 urgency = normal
-script = ~/.config/i3status/spotify_log.sh
+script = /home/ali/.config/i3status/spotify_log.sh
