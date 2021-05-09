@@ -30,7 +30,7 @@ browser = /usr/bin/brave-browser
 always_run_script = true
 title = Dunst
 class = Dunst
-transparency = 30
+transparency = 0
 
 [shortcuts]
 close = ctrl+space
