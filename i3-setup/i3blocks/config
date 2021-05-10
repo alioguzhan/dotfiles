@@ -1,0 +1,104 @@
+[spotify-previous]
+full_text=&#xf04a;
+markup=pango
+color=#d3d3d3
+command=playerctl previous
+
+[spotify-play-pause]
+full_text=&#xf04b;
+markup=pango
+color=#d3d3d3
+command=playerctl play-pause
+
+[spotify-next]
+full_text=&#xf04e;
+markup=pango
+color=#d3d3d3
+command=playerctl next
+
+[mediaplayer]
+command=$SCRIPT_DIR/mediaplayer/mediaplayer
+instance=spotify
+interval=5
+signal=10
+color=#1dd05d
+label= &#xf001;
+markup=pango
+
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+interval=5
+markup=pango
+label=&#xf2db;
+color=#b48ead
+
+[memory]
+command=$SCRIPT_DIR/memory/memory
+label=&#xf1c0;
+interval=10
+color=#d3d3d3
+markup=pango
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth2/bandwidth2
+interval=persist
+markup=pango
+color=#d3d3d3
+
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label=HOME
+# dir=/home/
+# alert_low=10
+# interval=30
+color=#d3d3d3
+
+[load_average]
+command=$SCRIPT_DIR/load_average/load_average
+interval=10
+color=#f5933
+markup=pango
+label=&#xf21e;
+
+
+# # Fetch the public IP address only on startup
+# [public-ip]
+# command=wget -qO - icanhazip.com
+# interval=once
+# color=#d3d3d3
+# markup=pango
+
+
+# Query my default IP address only on startup
+[ip-]
+command=hostname -I | awk '{ print "IP:" $1 }'
+interval=once
+color=#91E78B
+label=
+markup=pango
+
+[volume]
+command=$SCRIPT_DIR/volume/volume
+label=
+interval=once
+signal=10
+color=#ebcb8b
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in/Umraniye?format=1' | xargs echo
+interval=3600
+color=#A4C2F4
+
+# Update time every 5 seconds
+[time]
+command=date +"%a %-d %b %H:%M"
+interval=5
+color=#d3d3d3
+
+[dunst]
+command=$SCRIPT_DIR/dunst/dunst
+interval=once
+format=json
+markup=pango
+color=#d3d3d3
