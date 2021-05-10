@@ -235,6 +235,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease
 
 
 for_window [class="Skype"] floating enable border normal
+for_window [class="zoom"] floating enable border normal
 
 
 # show emoji selector on ctrl+space
