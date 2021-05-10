@@ -86,6 +86,7 @@ label=<span>&#xf028; </span>
 markup=pango
 interval=once
 signal=10
+STEP=2%
 color=#ebcb8b
 
 # Guess the weather hourly
