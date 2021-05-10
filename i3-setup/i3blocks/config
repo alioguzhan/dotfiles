@@ -74,7 +74,7 @@ label=<span>&#xf0ac; </span>
 
 # Query my default IP address only on startup
 [ip-]
-command=hostname -I | awk '{ print $1 }'
+command=bash ~/.config/i3blocks/ip.sh
 interval=once
 color=#91E78B
 label=<span font='FontAwesome'>&#xf26c; </span>
@@ -94,6 +94,20 @@ color=#ebcb8b
 command=curl -Ss 'https://wttr.in/Umraniye?format=1' | xargs echo
 interval=3600
 color=#A4C2F4
+
+[usdtry]
+command=python3 ~/.config/i3blocks/currency.py
+interval=3600
+color=#d3d3d3
+label=<span>&#xf155; </span>
+markup=pango
+
+[xautry]
+command=python3 ~/.config/i3blocks/currency.py --altin
+interval=3600
+color=#d3d3d3
+label=<span>&#xf091; </span>
+markup=pango
 
 # Update time every 5 seconds
 [time]
