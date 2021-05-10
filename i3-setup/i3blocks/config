@@ -19,22 +19,22 @@ command=playerctl next
 [mediaplayer]
 command=$SCRIPT_DIR/mediaplayer/mediaplayer
 instance=spotify
-interval=5
+interval=3
 signal=10
-color=#1dd05d
-label= &#xf001;
+label=<span>&#xf001; </span>
 markup=pango
+color=#1dd05d
 
 [cpu_usage]
 command=$SCRIPT_DIR/cpu_usage/cpu_usage
 interval=5
 markup=pango
-label=&#xf2db;
+label=<span>&#xf2db; </span>
 color=#b48ead
 
 [memory]
 command=$SCRIPT_DIR/memory/memory
-label=&#xf1c0;
+label=<span>&#xf1c0; </span>
 interval=10
 color=#d3d3d3
 markup=pango
@@ -43,14 +43,16 @@ markup=pango
 command=$SCRIPT_DIR/bandwidth2/bandwidth2
 interval=persist
 markup=pango
-color=#d3d3d3
+color=#97EAD2
+label=
 
 [disk]
 command=$SCRIPT_DIR/disk/disk
-label=HOME
-# dir=/home/
-# alert_low=10
-# interval=30
+label=<span>&#xf0a0; </span>
+markup=pango
+DIR=/
+alert_low=10
+interval=30
 color=#d3d3d3
 
 [load_average]
@@ -58,28 +60,30 @@ command=$SCRIPT_DIR/load_average/load_average
 interval=10
 color=#f5933
 markup=pango
-label=&#xf21e;
+label=<span>&#xf21e; </span>
 
 
-# # Fetch the public IP address only on startup
-# [public-ip]
-# command=wget -qO - icanhazip.com
-# interval=once
-# color=#d3d3d3
-# markup=pango
+# Fetch the public IP address only on startup
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=once
+color=#d3d3d3
+markup=pango
+label=<span>&#xf0ac; </span>
 
 
 # Query my default IP address only on startup
 [ip-]
-command=hostname -I | awk '{ print "IP:" $1 }'
+command=hostname -I | awk '{ print $1 }'
 interval=once
 color=#91E78B
-label=
+label=<span font='FontAwesome'>&#xf26c; </span>
 markup=pango
 
 [volume]
 command=$SCRIPT_DIR/volume/volume
-label=
+label=<span>&#xf028; </span>
+markup=pango
 interval=once
 signal=10
 color=#ebcb8b
@@ -96,9 +100,9 @@ command=date +"%a %-d %b %H:%M"
 interval=5
 color=#d3d3d3
 
-[dunst]
-command=$SCRIPT_DIR/dunst/dunst
-interval=once
-format=json
-markup=pango
-color=#d3d3d3
+# [dunst]
+# command=$SCRIPT_DIR/dunst/dunst
+# interval=once
+# format=json
+# markup=pango
+# color=#d3d3d3
