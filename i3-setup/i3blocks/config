@@ -5,10 +5,10 @@ color=#d3d3d3
 command=playerctl previous
 
 [spotify-play-pause]
-full_text=&#xf04b;
+command=bash ~/.config/i3blocks/spotify_play_status.sh
 markup=pango
 color=#d3d3d3
-command=playerctl play-pause
+interval=1
 
 [spotify-next]
 full_text=&#xf04e;
@@ -17,7 +17,8 @@ color=#d3d3d3
 command=playerctl next
 
 [mediaplayer]
-command=$SCRIPT_DIR/mediaplayer/mediaplayer
+# command=$SCRIPT_DIR/mediaplayer/mediaplayer
+command=spotifycli --statusshort
 instance=spotify
 interval=3
 signal=10
@@ -64,12 +65,12 @@ label=<span>&#xf21e; </span>
 
 
 # Fetch the public IP address only on startup
-[public-ip]
-command=wget -qO - icanhazip.com
-interval=once
-color=#d3d3d3
-markup=pango
-label=<span>&#xf0ac; </span>
+# [public-ip]
+# command=wget -qO - icanhazip.com
+# interval=once
+# color=#d3d3d3
+# markup=pango
+# label=<span>&#xf0ac; </span>
 
 
 # Query my default IP address only on startup
