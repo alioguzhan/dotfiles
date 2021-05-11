@@ -28,6 +28,10 @@ exec --no-startup-id xss-lock -n /usr/share/doc/xss-lock/dim-screen.sh --transfe
 
 bindsym $mod+l exec ~/.config/i3/lock.sh
 
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
 
 #autostart
 exec --no-startup-id feh --bg-fill ~/Pictures/wp/wallpaper_original.png
