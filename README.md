@@ -12,7 +12,6 @@ Install LTS node:
 
 ```bash
 curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install gcc g++ make
 sudo apt install nodejs
 ```
 
@@ -56,3 +55,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ## env variables
 
 create `.env_secret` file under `~/`. The content of that file will be loaded by zsh. (This should be created already with `./setup.sh` script)
+
+## i3
+
+All required configs and files will be copied with `./setup.sh` script. Additionaly, below programs should be installed to `~/.config`:
+
+- https://github.com/Raymo111/i3lock-color
+- https://github.com/Mange/rofi-emoji
+- https://github.com/vivien/i3blocks-contrib

@@ -13,7 +13,7 @@ sudo apt-get install -y \
       htop zsh libboost-system-dev \
       libboost-thread-dev libboost-program-options-dev \
       libboost-test-dev libudev-dev libyaml-cpp-dev \
-      libevdev-dev cmake build-essential \
+      libevdev-dev gcc g++ make cmake build-essential \
       wmctrl xdotool libinput-tools playerctl \
       compton hsetroot rxvt-unicode xsel rofi rofi-dev fonts-noto \
       fonts-mplus fonts-font-awesome xsettingsd lxappearance \
