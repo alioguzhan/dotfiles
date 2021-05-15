@@ -36,7 +36,7 @@ exec --no-startup-id nm-applet
 #autostart
 exec --no-startup-id feh --bg-fill ~/Pictures/wp/wallpaper_original.png
 exec --no-startup-id xsettingsd &
-exec --no-startup-id compton -b
+# exec --no-startup-id compton -b
 
 # get weather data on start
 exec_always --no-startup-id sh ~/.config/i3status/weather.sh

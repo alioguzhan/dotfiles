@@ -18,7 +18,7 @@ command=playerctl next
 
 [mediaplayer]
 # command=$SCRIPT_DIR/mediaplayer/mediaplayer
-command=spotifycli --statusshort
+command=spotifycli --status
 instance=spotify
 interval=3
 signal=10
@@ -30,12 +30,12 @@ color=#1dd05d
 command=$SCRIPT_DIR/cpu_usage/cpu_usage
 interval=5
 markup=pango
-label=<span>&#xf2db; </span>
-color=#b48ead
+label=<span color="#B3FFFC"> &#xf2db;  </span>
+color=#d3d3d3
 
 [memory]
 command=$SCRIPT_DIR/memory/memory
-label=<span>&#xf1c0; </span>
+label=<span color="#B3FFFC"> &#xf1c0;  </span>
 interval=10
 color=#d3d3d3
 markup=pango
@@ -44,12 +44,13 @@ markup=pango
 command=$SCRIPT_DIR/bandwidth2/bandwidth2
 interval=persist
 markup=pango
-color=#97EAD2
-label=
+color=#d3d3d3
+label=<span color="#B3FFFC">  </span>
+min_width=150
 
 [disk]
 command=$SCRIPT_DIR/disk/disk
-label=<span>&#xf0a0; </span>
+label=<span color="#B3FFFC">&#xf0a0;  </span>
 markup=pango
 DIR=/
 alert_low=10
@@ -59,9 +60,9 @@ color=#d3d3d3
 [load_average]
 command=$SCRIPT_DIR/load_average/load_average
 interval=10
-color=#f5933
+color=#d3d3d3
 markup=pango
-label=<span>&#xf21e; </span>
+label=<span color="#B3FFFC">&#xf21e;  </span>
 
 
 # Fetch the public IP address only on startup
@@ -77,37 +78,37 @@ label=<span>&#xf21e; </span>
 [ip-]
 command=bash ~/.config/i3blocks/ip.sh
 interval=once
-color=#91E78B
-label=<span font='FontAwesome'>&#xf26c; </span>
+color=#d3d3d3
+label=<span color="#B3FFFC">&#xf26c;  </span>
 markup=pango
 
 [volume]
 command=$SCRIPT_DIR/volume/volume
-label=<span>&#xf028; </span>
+label=<span color="#B3FFFC">&#xf028;  </span>
 markup=pango
 interval=once
 signal=10
 STEP=2%
-color=#ebcb8b
+color=#d3d3d3
 
 # Guess the weather hourly
 [weather]
 command=curl -Ss 'https://wttr.in/Umraniye?format=1' | xargs echo
 interval=3600
-color=#A4C2F4
+color=#d3d3d3
 
 [usdtry]
 command=python3 ~/.config/i3blocks/currency.py
 interval=3600
 color=#d3d3d3
-label=<span>&#xf155; </span>
+label=<span color='#85bb65'>&#xf155;  </span>
 markup=pango
 
 [xautry]
 command=python3 ~/.config/i3blocks/currency.py --altin
 interval=3600
 color=#d3d3d3
-label=<span>&#xf091; </span>
+label=<span>🥇  </span>
 markup=pango
 
 # Update time every 5 seconds
