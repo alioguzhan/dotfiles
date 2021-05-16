@@ -23,7 +23,7 @@ ln -fs "$PWD/i3-setup/i3status" "$HOME/.config" # i3status
 ln -fs "$PWD/i3-setup/dunstrc" "$HOME/.config/dunst/"
 ln -fs "$PWD/i3-setup/.Xresources" "$HOME/"
 ln -fs "$PWD/i3-setup/.xsettingsd" "$HOME/"
-ln -fs "$PWD/i3-setup/compton.conf" "$HOME/.config/"
+# ln -fs "$PWD/i3-setup/compton.conf" "$HOME/.config/"
 ln -fs "$PWD/i3-setup/i3blocks" "$HOME/.config" # i3blocks
 
 touch "$HOME/.env_secret" # This is where I keep my secret env variables.

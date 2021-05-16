@@ -30,12 +30,12 @@ color=#1dd05d
 command=$SCRIPT_DIR/cpu_usage/cpu_usage
 interval=5
 markup=pango
-label=<span color="#B3FFFC"> &#xf2db;  </span>
+label=<span color="#B3FFFC"> &#xf2db; </span>
 color=#d3d3d3
 
 [memory]
 command=$SCRIPT_DIR/memory/memory
-label=<span color="#B3FFFC"> &#xf1c0;  </span>
+label=<span color="#B3FFFC"> &#xf1c0; </span>
 interval=10
 color=#d3d3d3
 markup=pango
@@ -45,12 +45,12 @@ command=$SCRIPT_DIR/bandwidth2/bandwidth2
 interval=persist
 markup=pango
 color=#d3d3d3
-label=<span color="#B3FFFC">  </span>
+label=<span color="#B3FFFC"> </span>
 min_width=150
 
 [disk]
 command=$SCRIPT_DIR/disk/disk
-label=<span color="#B3FFFC">&#xf0a0;  </span>
+label=<span color="#B3FFFC">&#xf0a0; </span>
 markup=pango
 DIR=/
 alert_low=10
@@ -62,7 +62,7 @@ command=$SCRIPT_DIR/load_average/load_average
 interval=10
 color=#d3d3d3
 markup=pango
-label=<span color="#B3FFFC">&#xf21e;  </span>
+label=<span color="#B3FFFC">&#xf21e; </span>
 
 
 # Fetch the public IP address only on startup
@@ -79,12 +79,12 @@ label=<span color="#B3FFFC">&#xf21e;  </span>
 command=bash ~/.config/i3blocks/ip.sh
 interval=once
 color=#d3d3d3
-label=<span color="#B3FFFC">&#xf26c;  </span>
+label=<span color="#B3FFFC">&#xf26c; </span>
 markup=pango
 
 [volume]
 command=$SCRIPT_DIR/volume/volume
-label=<span color="#B3FFFC">&#xf028;  </span>
+label=<span color="#B3FFFC">&#xf028; </span>
 markup=pango
 interval=once
 signal=10
