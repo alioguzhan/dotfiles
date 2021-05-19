@@ -63,3 +63,5 @@ All required configs and files will be copied with `./setup.sh` script. Addition
 - https://github.com/Raymo111/i3lock-color
 - https://github.com/Mange/rofi-emoji
 - https://github.com/vivien/i3blocks-contrib
+
+Also clone, build and install https://github.com/vivien/i3blocks under ~/.local/lib
