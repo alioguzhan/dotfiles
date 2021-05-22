@@ -17,6 +17,6 @@ sudo apt-get install -y \
       wmctrl xdotool libinput-tools playerctl \
       compton hsetroot rxvt-unicode xsel rofi rofi-dev fonts-noto \
       fonts-mplus fonts-font-awesome xsettingsd lxappearance \
-      scrot viewnior xclip maim libtool python3-pip sysstat
+      scrot viewnior xclip maim libtool python3-pip sysstat feh light
 
 pip3 install spotify-cli-linux

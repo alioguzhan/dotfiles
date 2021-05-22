@@ -18,7 +18,7 @@ command=playerctl next
 
 [mediaplayer]
 # command=$SCRIPT_DIR/mediaplayer/mediaplayer
-command=spotifycli --status
+command=spotifycli --statusshort
 instance=spotify
 interval=3
 signal=10
@@ -77,7 +77,7 @@ label=<span color="#B3FFFC">&#xf21e; </span>
 # Query my default IP address only on startup
 [ip-]
 command=bash ~/.config/i3blocks/ip.sh
-interval=once
+interval=5
 color=#d3d3d3
 label=<span color="#B3FFFC">&#xf26c; </span>
 markup=pango
@@ -89,12 +89,6 @@ markup=pango
 interval=once
 signal=10
 STEP=2%
-color=#d3d3d3
-
-# Guess the weather hourly
-[weather]
-command=curl -Ss 'https://wttr.in/Umraniye?format=1' | xargs echo
-interval=3600
 color=#d3d3d3
 
 [usdtry]
@@ -110,6 +104,26 @@ interval=3600
 color=#d3d3d3
 label=<span>🥇  </span>
 markup=pango
+
+[batterybar]
+command=$SCRIPT_DIR/batterybar/batterybar
+interval=5
+markup=pango
+min_width=60
+color=#d3d3d3
+
+[brightness]
+command=light -G
+interval=1
+label=<span color='#B3FFFC'>💡 </span>
+markup=pango
+color=#d3d3d3
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?format=3' | xargs echo
+interval=3600
+color=#d3d3d3
 
 # Update time every 5 seconds
 [time]

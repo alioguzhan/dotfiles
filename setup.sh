@@ -23,4 +23,6 @@ bash "./modern-space-cadet.sh"
 # reload fonts
 fc-cache -fv
 
+sudo chmod +s "$(which light)"
+
 echo "Done."
