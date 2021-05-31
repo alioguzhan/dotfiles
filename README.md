@@ -1,6 +1,10 @@
+<div align="center">
+    <img src="./dot.png" width="100" />
+</div>
+
 # dotfiles
 
-Minimum viable configuration and setup for my Linux setups.
+Every config, command and program for a fresh linux installation.
 
 ## Initial Setup
 
@@ -64,4 +68,4 @@ All required configs and files will be copied with `./setup.sh` script. Addition
 - https://github.com/Mange/rofi-emoji
 - https://github.com/vivien/i3blocks-contrib
 
-Also clone, build and install https://github.com/vivien/i3blocks under ~/.local/lib
+Also clone, build and install https://github.com/vivien/i3blocks under `~/.local/lib`

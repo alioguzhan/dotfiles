@@ -19,8 +19,10 @@ def api_resp_to_json(resp):
 
 if sys.argv.count("--altin"):
     curr = ALTIN
+    icon = "X"
     url = "https://uzmanpara.milliyet.com.tr/gram-altin-fiyati/"
 else:
+    icon = "$"
     curr = USD
     url = "https://uzmanpara.milliyet.com.tr/dolar-kuru/"
 try:
@@ -33,7 +35,7 @@ try:
     resp = api_resp_to_json(resp)
     resp_final = f"{resp[-1]['kapanis']}"
 
-    print(resp_final)
+    print(icon + " " + resp_final)
 except:
     print("Parse Error!")
     exit(1)
