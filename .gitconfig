@@ -3,3 +3,9 @@
 	email = aoguzhanyildiz@gmail.com
 [pull]
 	rebase = false
+[merge]
+	ff = only
+[alias]
+	lograph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+	logline = log --pretty=format:'%h %Cblue%ai%Creset %C(yellow)%<(24)%ae%Creset %C(auto)%d%Creset %Cgreen%s%Creset'
+	rebranch = "!echo '## Current Branch List' && git branch -a && echo '## Updating Remote' && git remote update --prune && echo '## Updated Branch List' && git branch -a"
