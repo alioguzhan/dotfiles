@@ -1,6 +1,9 @@
 
 # Modern Space Cadet by Steve Losh
 
+Read detailed guide here:
+
+[https://yildiz.dev/2020/12/31/a-modern-space-cadet-but-for-linux-md/](https://yildiz.dev/2020/12/31/a-modern-space-cadet-but-for-linux-md/)
 
 ## Download, Compile and Install
 
