@@ -13,3 +13,5 @@ ln -fs "$PWD/i3-setup/i3status" "$HOME/.config" # i3status
 ln -fs "$PWD/i3-setup/.Xresources" "$HOME/"
 ln -fs "$PWD/i3-setup/.xsettingsd" "$HOME/"
 ln -fs "$PWD/i3-setup/i3blocks" "$HOME/.config" # i3blocks
+
+sudo chmod +s "$(which light)"

@@ -20,3 +20,6 @@ sudo apt-get install -y \
       scrot viewnior xclip maim libtool python3-pip sysstat feh light
 
 pip3 install spotify-cli-linux
+
+# reload fonts
+fc-cache -fv
