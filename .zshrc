@@ -12,7 +12,6 @@ ZSH_THEME="robbyrussell"
 
 # custom completions
 fpath+=~/.zfunc
-compinit
 
 plugins=(git node nvm)
 
@@ -65,3 +64,11 @@ source ~/.env_secret
 
 alias python=python3
 alias p="cd ~/projects"
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/ali/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
