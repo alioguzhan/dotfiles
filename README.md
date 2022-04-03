@@ -60,6 +60,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 create `.env_secret` file under `~/`. The content of that file will be loaded by zsh. (This should be created already with `./setup.sh` script)
 
+## gitconfig
+
+Create a `~/.gitconfig.local` file to store custom/secret git configuration. It will be included in `~/.gitconfig` file.
+
 ## i3
 
 All required configs and files will be copied with `./setup.sh` script. Additionaly, below programs should be installed to `~/.config`:
