@@ -33,7 +33,7 @@ except:
 try:
     resp = r_usd.read().decode("utf-8")
     resp = api_resp_to_json(resp)
-    resp_final = f"{resp[-1]['kapanis']}"
+    resp_final = f"{resp[-1]['kapanis']}"[:5]
 
     print(icon + " " + resp_final)
 except:
