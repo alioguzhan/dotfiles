@@ -11,7 +11,5 @@
 	rebranch = "!echo '## Current Branch List' && git branch -a && echo '## Updating Remote' && git remote update --prune && echo '## Updated Branch List' && git branch -a"
 [init]
 	defaultBranch = main
-[commit]
-	gpgsign = true
 [include]
   path = ~/.gitconfig.local
