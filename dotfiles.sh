@@ -13,5 +13,7 @@ ln -fs "$PWD/.vimrc" "$HOME/.vimrc"
 ln -fs "$PWD/.gitconfig" "$HOME/.gitconfig"
 ln -fs "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 
-touch "$HOME/.env_secret" # This is where I keep my secret env variables.
+touch "$HOME/.env.local" # This is where I keep my secret env variables.
+touch "$HOME/.gitconfig.local"
+
 echo "Done."

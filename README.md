@@ -58,7 +58,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ## env variables
 
-create `.env_secret` file under `~/`. The content of that file will be loaded by zsh. (This should be created already with `./setup.sh` script)
+create `.env.local` file under `~/`. The content of that file will be loaded by zsh. (This should be created already with `./setup.sh` script)
 
 ## gitconfig
 

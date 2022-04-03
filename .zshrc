@@ -60,7 +60,7 @@ fi
 
 # this is for my secret env variables. do not keep those in this file
 # since this is on Github
-source ~/.env_secret
+source ~/.env.local
 
 alias python=python3
 alias p="cd ~/projects"
