@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 # custom completions
 fpath+=~/.zfunc
 
-plugins=(git node nvm)
+plugins=(git node)
 
 source $ZSH/oh-my-zsh.sh
 

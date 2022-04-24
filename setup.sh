@@ -14,6 +14,9 @@ else
       exit 1
 fi
 
+echo 'install oh-my-zsh first...'
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # link dot files
 bash "./dotfiles.sh"
 
