@@ -9,18 +9,12 @@ test $? -eq 0 || exit 1
 echo "Distro is Debian based. Installing packages..."
 
 sudo apt-get install -y \
-      git curl neofetch vim i3 \
+      git curl neofetch vim \
       htop zsh libboost-system-dev \
       libboost-thread-dev libboost-program-options-dev \
       libboost-test-dev libudev-dev libyaml-cpp-dev \
-      libevdev-dev gcc g++ make cmake build-essential \
-      wmctrl xdotool libinput-tools playerctl \
-      compton hsetroot rxvt-unicode xsel rofi rofi-dev fonts-noto \
-      fonts-mplus fonts-font-awesome xsettingsd lxappearance \
-      scrot viewnior xclip maim libtool python3-pip sysstat feh light \
-      gnome-weather chrome-gnome-shell fonts-jetbrains-mono \
-
-pip3 install spotify-cli-linux
+      libevdev-dev gcc g++ make cmake build-essential python3-pip \
+      xclip gnome-weather chrome-gnome-shell fonts-jetbrains-mono
 
 # reload fonts
 fc-cache -fv

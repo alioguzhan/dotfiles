@@ -24,7 +24,7 @@ Create a `~/.gitconfig.local` file to store custom/secret git configuration. It 
 
 ## i3
 
-All required configs and files will be copied with `./setup.sh` script. Additionaly, below programs should be installed to `~/.config`:
+All required configs and files will installed and copied with `./i3.sh` script. Additionaly, below programs should be installed to `~/.config`:
 
 - https://github.com/Raymo111/i3lock-color
 - https://github.com/Mange/rofi-emoji

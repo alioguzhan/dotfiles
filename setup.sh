@@ -20,9 +20,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # link dot files
 bash "./dotfiles.sh"
 
-# link i3 config files
-# bash "./i3.sh"
-
 # prepare modern space cadet
 bash "./modern-space-cadet.sh"
 

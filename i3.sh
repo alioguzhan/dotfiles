@@ -3,6 +3,17 @@
 set -eu -o pipefail # fail on error , debug all lines
 set -x
 
+sudo -n true
+test $? -eq 0 || exit 1
+
+sudo apt install -y \
+    i3 compton hsetroot rxvt-unicode xsel rofi rofi-dev fonts-noto \
+    wmctrl xdotool libinput-tools playerctl \
+    fonts-mplus fonts-font-awesome xsettingsd lxappearance \
+    scrot viewnior maim libtool sysstat feh light
+
+pip3 install spotify-cli-linux
+
 mkdir -p "$HOME/.logs"
 mv "$HOME"/.config/i3 "$HOME"/.config/i3.old 2>/dev/null || true
 mv "$HOME"/.config/i3status "$HOME"/.config/i3status.old 2>/dev/null || true
