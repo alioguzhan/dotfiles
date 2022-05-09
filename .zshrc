@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 # custom completions
 fpath+=~/.zfunc
 
-plugins=(git node)
+plugins=(git node zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
