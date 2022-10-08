@@ -30,17 +30,12 @@ fi
 # get rid of user@host in prompt
 DEFAULT_USER=$USER
 
-# nvm related
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
 # mimic MacOS
 alias open='xdg-open &>/dev/null'
 
 # fnm
-export PATH=/home/ali/.fnm:$PATH
-eval "$(fnm env)"
+# export PATH=/home/ali/.fnm:$PATH
+# eval "$(fnm env)"
 
 [ -f "/home/ali/.ghcup/env" ] && source "/home/ali/.ghcup/env" # ghcup-env
 
@@ -50,6 +45,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/usr/local/go/bin
+export PATH=~/.npm-global/bin:$PATH
+
 alias emacs="emacs -nw"
 
 export REACT_APP_EDITOR=code

@@ -8,7 +8,12 @@ Every config, command and program for a fresh linux installation.
 
 ## Initial Setup
 
-Run `./setup.sh` first.
+install oh-my-zsh first:
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Then run `./setup.sh`.
 
 ## Common Programs and Configurations
 
