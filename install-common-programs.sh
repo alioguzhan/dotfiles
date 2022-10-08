@@ -12,7 +12,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 mkdir -p ~/.npm-global
-npm config set prefix '~/.npm-global'
+npm config set prefix "$HOME/.npm-global"
 
 echo 'install yarn...'
 npm install --global yarn
