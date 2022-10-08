@@ -1,3 +1,4 @@
+from numbers import Number
 import urllib.request
 import urllib.parse
 import json
@@ -8,6 +9,14 @@ import webbrowser
 USD = "USDTRY"
 ALTIN = "SGLD"
 
+def sanitize_curr_rate(rate: Number):
+    if not rate or not isinstance(rate, Number):
+        return "invalid rate"
+    elif "." in str(rate):
+        main, decimal = str(rate).split(".")
+        return f"{main}.{decimal[:2]}"
+    else:
+        return str(rate)
 
 def get_api_url(currency):
     return f"https://uzmanpara.milliyet.com.tr/c/grafik_data.asp?sembol={currency}&tur=I&tip=2&period=1&callback=?"
@@ -33,11 +42,12 @@ except:
 try:
     resp = r_usd.read().decode("utf-8")
     resp = api_resp_to_json(resp)
-    resp_final = f"{resp[-1]['kapanis']}"[:5]
+    rate = resp[-1]['kapanis']
+    resp_final = sanitize_curr_rate(rate)
 
     print(icon + " " + resp_final)
-except:
-    print("Parse Error!")
+except Exception as e:
+    print("Parse Error: ", str(e))
     exit(1)
 
 if os.getenv("BLOCK_BUTTON", "Na") == "1":
