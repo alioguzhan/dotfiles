@@ -13,3 +13,7 @@
 	defaultBranch = main
 [include]
   path = ~/.gitconfig.local
+[commit]
+	gpgsign = true
+[format]
+	signoff = true
