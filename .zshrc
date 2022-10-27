@@ -51,9 +51,9 @@ alias emacs="emacs -nw"
 
 export REACT_APP_EDITOR=code
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then # for Tilix Terminal
-  source /etc/profile.d/vte.sh
-fi
+#if [ $TILIX_ID ] || [ $VTE_VERSION ]; then # for Tilix Terminal 
+#  source /etc/profile.d/vte.sh
+#fi
 
 # this is for my secret env variables. do not keep those in this file
 # since this is on Github
