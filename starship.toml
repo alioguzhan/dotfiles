@@ -1,0 +1,31 @@
+format = "$all$fill$cmd_duration$nix_shell$time$status$line_break$character"
+
+[fill]
+symbol = " "
+
+
+[cmd_duration]
+min_time = 500
+format = "⌛[$duration](bold yellow) "
+
+[time]
+disabled = false
+format = "🕙 [$time](bold yellow)"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[status]
+format = " [$symbol( $int)( \\($common_meaning\\))( $signal_number)( \\($signal_name\\))]($style)"
+pipestatus_format = " $pipestatus 👉 [$symbol( $int)( \\($common_meaning\\))( $signal_number)( \\($signal_name\\))]($style)"
+disabled = false
+symbol = "🔴"
+success_symbol = ""
+sigint_symbol = "💔"
+signal_symbol = "⚡"
+pipestatus_separator = " |"
+map_symbol = true
+recognize_signal_code = true
+pipestatus = true
