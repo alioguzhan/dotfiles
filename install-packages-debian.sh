@@ -14,7 +14,8 @@ sudo apt-get install -y \
       libboost-thread-dev libboost-program-options-dev \
       libboost-test-dev libudev-dev libyaml-cpp-dev \
       libevdev-dev gcc g++ make cmake build-essential python3-pip \
-      xclip gnome-weather chrome-gnome-shell fonts-jetbrains-mono pkg-config
+      xclip gnome-weather chrome-gnome-shell fonts-jetbrains-mono pkg-config \
+      gnome-sushi gthumb vlc gnome-tweaks
 
 # reload fonts
 fc-cache -fv
