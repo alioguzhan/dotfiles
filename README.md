@@ -15,6 +15,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 Then run `./setup.sh`.
 
+Install starship as well:
+
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+
 ## Common Programs and Configurations
 
 run `./install-common-programs.sh` to install and configure some common apps.
