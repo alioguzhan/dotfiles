@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 # custom completions
 fpath+=~/.zfunc
 
-plugins=(git node zsh-syntax-highlighting)
+plugins=(git node zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,7 +51,7 @@ alias emacs="emacs -nw"
 
 export REACT_APP_EDITOR=code
 
-#if [ $TILIX_ID ] || [ $VTE_VERSION ]; then # for Tilix Terminal 
+#if [ $TILIX_ID ] || [ $VTE_VERSION ]; then # for Tilix Terminal
 #  source /etc/profile.d/vte.sh
 #fi
 
@@ -70,8 +70,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+alias gogh='bash -c "$(wget -qO- https://git.io/vQgMr)"'
 eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion

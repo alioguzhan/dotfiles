@@ -3,19 +3,40 @@
 set -eu -o pipefail # fail on error , debug all lines
 set -x
 
-sudo -n true
-test $? -eq 0 || exit 1
-
-echo "Distro is Debian based. Installing packages..."
+if ! sudo -v; then
+      error "Superuser not granted, aborting..."
+      exit 1
+fi
 
 sudo apt-get install -y \
-      git curl neofetch vim \
-      htop zsh libboost-system-dev \
-      libboost-thread-dev libboost-program-options-dev \
-      libboost-test-dev libudev-dev libyaml-cpp-dev \
-      libevdev-dev gcc g++ make cmake build-essential python3-pip \
-      xclip gnome-weather chrome-gnome-shell fonts-jetbrains-mono pkg-config \
-      gnome-sushi gthumb vlc gnome-tweaks
+      build-essential \
+      chrome-gnome-shell \
+      cmake \
+      curl \
+      fonts-jetbrains-mono \
+      g++ \
+      gcc \
+      git \
+      gnome-sushi \
+      gnome-tweaks \
+      gnome-weather \
+      gthumb \
+      htop \
+      libboost-program-options-dev \
+      libboost-system-dev \
+      libboost-test-dev \
+      libboost-thread-dev \
+      libevdev-dev \
+      libudev-dev \
+      libyaml-cpp-dev \
+      make \
+      neofetch \
+      pkg-config \
+      python3-pip \
+      vim \
+      vlc \
+      xclip \
+      zsh
 
 # reload fonts
 fc-cache -fv

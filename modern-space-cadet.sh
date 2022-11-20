@@ -3,6 +3,11 @@
 set -eu -o pipefail # fail on error , debug all lines
 set -x
 
+if ! sudo -v; then
+    error "Superuser not granted, aborting..."
+    exit 1
+fi
+
 echo "Preparing modern-space-cadet..."
 
 mkdir -p "$HOME/.modern-space-cadet"
