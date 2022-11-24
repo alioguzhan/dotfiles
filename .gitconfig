@@ -17,4 +17,5 @@
 	signoff = true
 [include]
   path = ~/.gitconfig.local
-
+[core]
+	pager = cat
