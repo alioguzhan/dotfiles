@@ -61,6 +61,9 @@ source ~/.env.local
 
 alias python=python3
 alias p="cd ~/projects"
+alias lsblk="lsblk -o name,mountpoint,label,size,type,uuid"
+alias ip="ip --color=auto"
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
