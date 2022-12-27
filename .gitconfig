@@ -18,4 +18,4 @@
 [include]
   path = ~/.gitconfig.local
 [core]
-	pager = cat
+	pager = less -F
